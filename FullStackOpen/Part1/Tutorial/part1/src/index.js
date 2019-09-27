@@ -1,20 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Hello = () => {
+const Hello = props => {
   return (
     <div>
-      <p>Hello World</p>
+      <p>Hello {props.name}</p>
     </div>
   );
 };
 
-const App = () => {
+const Footer = () => {
   return (
-    <div>
+    <p>
+      greeting app created by <a href="http://www.davidkoliacode.com">David.</a>
+    </p>
+  );
+};
+
+const App = () => {
+  const name = "Peter";
+  const age = 10;
+
+  return (
+    <>
       <h1>Greetings</h1>
-      <Hello />
-    </div>
+      <Hello name="Maya" age={26 + 10} />
+      <Hello name={name} age={age} />
+      <Footer />
+    </>
   );
 };
 
